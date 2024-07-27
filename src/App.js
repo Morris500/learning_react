@@ -1,43 +1,32 @@
-//1. Create a new React app.
-//2. Create a App.jsx component.
-//3. Create a Header.jsx component that renders a <header> element
-//to show the Keeper App name in an <h1>.
-//4. Create a Footer.jsx component that renders a <footer> element
-//to show a copyright message in a <p> with a dynamically updated year.
-//5. Create a Note.jsx component to show a <div> element with a
-//<h1> for a title and a <p> for the content.
-//6. Make sure that the final website is styled like the example shown here:
-//https://l1pp6.csb.app/
+import React from "react";
+import { contacts } from "./contacts";
+import {Card} from "./card";
 
-//HINT: You will need to study the classes in teh styles.css file to appy styling.
-
-function Heading() {
+function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-       
-        <h1 className=''>KEEPER APP!!!</h1>
-      </header>
+    <div>
+      <h1 className="heading">My Contacts</h1>
+    
+      < Card  
+      name= {contacts[0].name}
+      img ={contacts[0].imgURL}
+      phone = {contacts[0].phone}
+      email = {contacts[0].email }
+      />
+       <Card 
+      name= {contacts[1].name}
+      img ={contacts[1].imgURL}
+      phone = {contacts[1].phone}
+      email = {contacts[1].email }
+      />
+       <Card 
+      name= {contacts[2].name}
+      img ={contacts[2].imgURL}
+      phone = {contacts[2].phone}
+      email = {contacts[2].email }
+      />
     </div>
-  );
-};
-function Note() {
-  return(
-    <div className="note"> 
-<h1>for a tittle </h1>
-<p>for the  content</p>
-    </div>
-  )
-};
-function Footer() {
-  return(
-<div>
- <footer>
-<p>copyright {new Date().getFullYear()}</p>
- </footer>
-</div>
   );
 }
 
-export {Heading,Note,Footer};
- 
+export { App};
