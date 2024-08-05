@@ -1,4 +1,5 @@
  import React from "react";
+ import {Avartar, Info} from "./avartar";
 
 function Card(props) {
     
@@ -6,15 +7,12 @@ function Card(props) {
         <div className="card">
         <div className="top">
           <h2 className="name">{props.name}</h2>
-          <img
-            src= {props.img}
-            alt="avatar_img"
-            className="circle-img"
-          />
+       <Avartar img={props.img} />
+            
         </div>
         <div className="bottom" >
-          <p className="info">{props.phone}</p>
-          <p className="info">{props.email}</p>
+          <Info phone ={props.phone} />
+          <Info email ={props.email} />
         </div>
       </div> 
     );
